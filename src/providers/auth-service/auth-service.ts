@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage';
   and Angular DI.
 */
 
-let apiUrl = "http://xn--btfrerprventrondheim-wzb43bf.no/wp-json/jwt-auth/v1/"
+let apiUrl = "apiurlgoeshere"
 
 @Injectable()
 export class AuthServiceProvider {
@@ -20,7 +20,7 @@ export class AuthServiceProvider {
 
   signIn(credentials, endpoint) {
     return new Promise((resolve, reject) => {
-      this.http.post(`${apiUrl}${endpoint}`, credentials).subscribe(res => {
+      this.http.post(`${apiUrl}token/${endpoint}`, credentials).subscribe(res => {
         resolve(res)
       }, err => {
         reject(err)
